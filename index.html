@@ -1,69 +1,241 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE SENERDEX CASE</title>
+    <meta name="theme-color" content="#090909">
 
-    <style>
-        body {
-            background: #151923;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
+    <title>CRIME INTERROGE | Official Website</title>
+    <meta name="description" content="CRIME INTERROGE. Every suspect has a story. Every story has a crack.">
 
-        .container {
-            max-width: 600px;
-            padding: 30px;
-        }
-
-        h1 {
-            font-size: 42px;
-        }
-
-        p {
-            color: #b8c1d1;
-            line-height: 1.6;
-        }
-
-        .download {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 16px 35px;
-            background: #315c9b;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-
-        .download:hover {
-            background: #4479bd;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>THE SENERDEX CASE</h1>
 
-        <p>
-            A detective interrogation game where every question matters.
-            Can you make Senerdex confess?
-        </p>
+    <div class="top-line"></div>
 
-        <a class="download"
-           href="https://drive.google.com/uc?export=download&id=16ZfDgEeamd1xUTEwxUyM_224QVFfOlFu">
-            DOWNLOAD GAME
+    <header class="site-header">
+        <a class="brand" href="#home">
+            <span class="brand-icon">CI</span>
+            <span class="brand-name">CRIME <strong>INTERROGE</strong></span>
         </a>
-    </div>
+
+        <nav class="navigation">
+            <a href="#home" data-i18n="nav_home">HOME</a>
+            <a href="#downloads" data-i18n="nav_downloads">DOWNLOADS</a>
+            <a href="#updates" data-i18n="nav_updates">UPDATE LOGS</a>
+            <a href="#cases" data-i18n="nav_cases">CASE FILES</a>
+            <a href="#about" data-i18n="nav_about">ABOUT</a>
+        </nav>
+
+        <div class="language-selector">
+            <span class="language-label">LANGUAGE</span>
+            <select id="languageSelect" aria-label="Select language">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <div class="classified-label">
+                    <span class="status-dot"></span>
+                    <span data-i18n="classified">CLASSIFIED INVESTIGATION DATABASE</span>
+                </div>
+
+                <p class="eyebrow" data-i18n="hero_eyebrow">
+                    OFFICIAL GAME WEBSITE
+                </p>
+
+                <h1>CRIME<br><span>INTERROGE</span></h1>
+
+                <p class="hero-description" data-i18n="hero_description">
+                    Every suspect has a story. Every story has a crack.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#downloads" class="button button-primary" data-i18n="hero_download">
+                        DOWNLOAD GAME
+                    </a>
+
+                    <a href="#cases" class="button button-secondary" data-i18n="hero_cases">
+                        VIEW CASE FILES
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stamp">
+                <span>CONFIDENTIAL</span>
+                <small>CRIME INTERROGE DATABASE</small>
+            </div>
+
+            <div class="hero-footer">
+                <span>DATABASE ACCESS: AUTHORIZED</span>
+                <span>DOCUMENT ID: CI-001</span>
+            </div>
+        </section>
+
+        <!-- DOWNLOADS -->
+        <section class="section content-section" id="downloads">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <div>
+                    <p class="eyebrow" data-i18n="downloads_eyebrow">AVAILABLE FILES</p>
+                    <h2 data-i18n="downloads_title">DOWNLOADS</h2>
+                </div>
+            </div>
+
+            <div class="download-panel">
+                <div class="download-info">
+                    <span class="file-tag">APPLICATION PACKAGE</span>
+                    <h3>CRIME INTERROGE</h3>
+                    <p data-i18n="download_description">
+                        Download the game package and extract the files before launching it.
+                    </p>
+                    <div class="file-details">
+                        <span>FORMAT: .ZIP</span>
+                        <span>PLATFORM: WINDOWS</span>
+                    </div>
+                </div>
+
+                <a
+                    class="button button-primary download-button"
+                    href="https://drive.google.com/uc?export=download&id=1v8Xp2j8I_LqY1WoaaV0Hf-oGHE-dSZh6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="download_button"
+                >
+                    DOWNLOAD GAME
+                </a>
+            </div>
+
+            <p class="small-note" data-i18n="download_note">
+                Make sure you extract the ZIP before opening the launcher.
+            </p>
+        </section>
+
+        <!-- UPDATE LOGS -->
+        <section class="section content-section" id="updates">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <div>
+                    <p class="eyebrow" data-i18n="updates_eyebrow">DEVELOPMENT RECORDS</p>
+                    <h2 data-i18n="updates_title">UPDATE LOGS</h2>
+                </div>
+            </div>
+
+            <div id="updatesContainer" class="updates-container">
+                <p class="loading-message" data-i18n="updates_loading">
+                    Loading investigation records...
+                </p>
+            </div>
+        </section>
+
+        <!-- CASE FILES -->
+        <section class="section content-section" id="cases">
+            <div class="section-heading">
+                <span class="section-number">03</span>
+                <div>
+                    <p class="eyebrow" data-i18n="cases_eyebrow">REGISTERED SUBJECTS</p>
+                    <h2 data-i18n="cases_title">CASE FILES</h2>
+                </div>
+            </div>
+
+            <div class="case-grid">
+
+                <article class="case-card">
+                    <div class="case-card-top">
+                        <span>CASE #001</span>
+                        <span class="case-status" data-i18n="case_available">AVAILABLE</span>
+                    </div>
+                    <div class="case-symbol">01</div>
+                    <h3>THE SENERDEX CASE</h3>
+                    <p data-i18n="case_senerdex">
+                        The first investigation. A suspect, a series of questions, and a truth waiting to be uncovered.
+                    </p>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-card-top">
+                        <span>CASE #002</span>
+                        <span class="case-status case-pending" data-i18n="case_pending">PENDING</span>
+                    </div>
+                    <div class="case-symbol">02</div>
+                    <h3>THE RELER CASE</h3>
+                    <p data-i18n="case_reler">
+                        Investigation records are being prepared.
+                    </p>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-card-top">
+                        <span>CASE #003</span>
+                        <span class="case-status case-pending" data-i18n="case_pending">PENDING</span>
+                    </div>
+                    <div class="case-symbol">03</div>
+                    <h3>THE KLEB CASE</h3>
+                    <p data-i18n="case_kleb">
+                        Investigation records are being prepared.
+                    </p>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-card-top">
+                        <span>CASE #004</span>
+                        <span class="case-status case-pending" data-i18n="case_pending">PENDING</span>
+                    </div>
+                    <div class="case-symbol">04</div>
+                    <h3>THE CIBERTO CASE</h3>
+                    <p data-i18n="case_ciberto">
+                        Investigation records are being prepared.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section content-section" id="about">
+            <div class="section-heading">
+                <span class="section-number">04</span>
+                <div>
+                    <p class="eyebrow" data-i18n="about_eyebrow">DATABASE INFORMATION</p>
+                    <h2 data-i18n="about_title">ABOUT THE PROJECT</h2>
+                </div>
+            </div>
+
+            <div class="about-panel">
+                <div class="about-mark">CI</div>
+
+                <div>
+                    <h3>CRIME INTERROGE</h3>
+                    <p data-i18n="about_description">
+                        CRIME INTERROGE is an interrogation game where players question suspects, investigate their answers, and attempt to uncover the truth.
+                    </p>
+                    <p class="about-credit">
+                        <span data-i18n="created_by">CREATED BY</span>
+                        <strong>SENERDEX</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>CRIME INTERROGE</strong>
+            <p data-i18n="footer_text">OFFICIAL INVESTIGATION DATABASE</p>
+        </div>
+
+        <span>© 2026 SENERDEX</span>
+    </footer>
+
 </body>
 </html>
-
